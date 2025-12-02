@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import img from "@/public/img3.png";
+import Actions from "../../dashboard/Purchaase/Actions";
+import { useState } from "react";
 
 const orders = [
   {
@@ -69,6 +71,7 @@ const statusColor = {
 };
 
 export default function RecentPurchases() {
+const [activeIndex, setActiveIndex] = useState(null);
   return (
     <div className="bg-white p-6 rounded-2xl shadow w-full">
       <h2 className="text-lg font-semibold mb-4">Recent Purchases</h2>
@@ -107,11 +110,7 @@ export default function RecentPurchases() {
                 <td className="py-4">{row.date}</td>
 
                 <td className="py-4 flex items-center gap-2">
-                  <Image
-                    src={img}
-                    alt=""
-                    className="w-8 h-8 rounded-full"
-                  />
+                  <Image src={img} alt="" className="w-8 h-8 rounded-full" />
                   {row.customer.name}
                 </td>
 
@@ -128,17 +127,24 @@ export default function RecentPurchases() {
 
                 <td className="py-4">{row.amount}</td>
 
-                <td className="py-4 text-right flex justify-center">
-                  <button className="text-gray-400 hover:text-gray-600">
+                <td className="py-4 text-right flex justify-center relative">
+                  <button
+                    onClick={() =>
+                      setActiveIndex(activeIndex === idx ? null : idx)
+                    }
+                    className="text-gray-400 hover:text-gray-600"
+                  >
                     ...
                   </button>
+                  <div className="absolute top-8 right-16">
+                    {activeIndex === idx && <Actions sat={"Pending"}/>}
+                  </div>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      
     </div>
   );
 }
