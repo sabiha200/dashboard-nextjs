@@ -7,7 +7,7 @@ import Theme from '../sidebar/Theme'
 
 const SideBar = () => {
   return (
-    <div className='px-[27px] h-[1816px] pb-[62px] pt-[25px] flex flex-col justify-between'>
+    <div className='px-[27px] h-fit pb-[62px] pt-[25px] flex flex-col justify-between'>
      <div className='flex flex-col'>
        <Menu/>  
       <Categories/>  

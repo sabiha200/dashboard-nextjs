@@ -15,14 +15,14 @@ const Menu = () => {
           <h3>Dashboard</h3>
         </div>
       </Link>
-      <Link href={"/"}>
+      <Link href={"/products"}>
         <div className="flex gap-3 w-[200px] items-center p-4  text-gray-500 rounded-lg  ">
           <BiStoreAlt className="text-2xl " />
           <h3>Products</h3>
         </div>
       </Link>
 
-      <Link href={"/"}>
+      <Link href={"/recentorder"}>
         <div className="flex gap-3 w-[200px] items-center p-4  text-gray-500 rounded-lg ">
           <GoInbox className="text-2xl " />
           <h3>Orders</h3>

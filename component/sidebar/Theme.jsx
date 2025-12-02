@@ -5,7 +5,7 @@ import { MdOutlineWbSunny } from "react-icons/md";
 
 const Theme = () => {
   return (
-    <div className="bg-[#E8EDF2] w-[206px] h-[53px] grid grid-cols-3">
+    <div className="bg-[#E8EDF2] w-[206px] h-[53px] grid grid-cols-3 rounded-2xl">
       <div className="  pt-4  pl-[19px] col-span-2">
         <div className=" flex gap-1 border-r-2 border-white">
           <IoMoonOutline className="text-[#C6CBD9] w-4 h-4" />
